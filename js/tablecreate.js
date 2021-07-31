@@ -1,4 +1,11 @@
 /*
+File: tablecreate.js
+Javascript for creating a table give the min and max column sizes with verification
+Wenjin Zhou, UMass Lowell Computer Science, wzhou@cs.uml.edu
+Copyright (c) 2021 by Wenjin. All rights reserved. May be freely copied or
+excerpted for educational purposes with credit to the author.
+updated by Michael Batbouta on July 31, 2021 at 4:50 pm
+
 resources used
 https://www.w3schools.com/js/js_validation.asp
 https://stackoverflow.com/questions/14643617/create-table-using-javascript
@@ -27,6 +34,7 @@ function validateEntry() {
     if (isNaN(x)|| x === '' || x < min || x > max) {
         minColtext = "Input not valid. Failed to update";
         document.getElementById("minColRes").innerHTML = minColtext;
+        mincolres.style.display = "";
         error =1;
     }else{
       mincolres.style.display = "none"
@@ -34,6 +42,7 @@ function validateEntry() {
     if (isNaN(y)  || y === '' || y < min || y > max) {
         maxColtext = "Input not valid. Failed to update";
         document.getElementById("maxColRes").innerHTML = maxColtext;
+        maxColRes.style.display = "";
         error =1;
 
     }else{
@@ -42,6 +51,7 @@ function validateEntry() {
     if (isNaN(z)|| z === '' || z < min || z > max) {
         minRowtext = "Input not valid. Failed to update";
         document.getElementById("minRowRes").innerHTML = minRowtext;
+        minRowRes.style.display ="";
         error =1;
 
     }
@@ -51,10 +61,30 @@ function validateEntry() {
     if (isNaN(q)|| q === '' || q < min || q > max) {
         maxRowtext = "Input not valid. Failed to update";
         document.getElementById("maxRowRes").innerHTML = maxRowtext;
+        maxRowRes.style.display = "";
         error =1;
 
     }else{
       maxRowRes.style.display = "none"
+    }
+    //check if the mins are greater then the maxes
+    if(Number.parseInt(z) > Number.parseInt(q)){
+      maxRowtext = "Input not valid.Min is greater than max. Failed to update";
+      maxRowRes.style.display = "";
+      document.getElementById("maxRowRes").innerHTML = maxRowtext;
+      minRowtext = "Input not valid. Min is greater than max. Failed to update";
+      minRowRes.style.display ="";
+      document.getElementById("minRowRes").innerHTML = minRowtext;
+      error =1;
+    }
+    if(Number.parseInt(x) > Number.parseInt(y)){
+      maxColtext = "Input not valid. Min is greater than max. Failed to update";
+      document.getElementById("maxColRes").innerHTML = maxColtext;
+      maxColRes.style.display = "";
+      minColtext = "Input not valid. Min is greater than max. Failed to update";
+      document.getElementById("minColRes").innerHTML = minColtext;
+      mincolres.style.display = "";
+      error =1;
     }
 
     if(error === 0){
