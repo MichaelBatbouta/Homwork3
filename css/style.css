@@ -1,4 +1,11 @@
-
+/*
+File: style.css
+Styling for tables and form
+Michael Batbouta, UMass Lowell Computer Science, michael_batbouta@student.uml.edu
+Copyright (c) 2021 by Wenjin. All rights reserved. May be freely copied or
+excerpted for educational purposes with credit to the author.
+updated by Michael Batbouta on July 31, 2021 at 4:50 pm
+*/
 #wrapper{
 	width: 90%; 						/* Width is 80% of page*/
   	min-width: 600px;					/* Minimum Width is 600 pixels*/

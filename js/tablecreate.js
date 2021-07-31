@@ -1,7 +1,7 @@
 /*
 File: tablecreate.js
 Javascript for creating a table give the min and max column sizes with verification
-Wenjin Zhou, UMass Lowell Computer Science, wzhou@cs.uml.edu
+Michael Batbouta, UMass Lowell Computer Science, wMichael_batbouta@student.uml.edu
 Copyright (c) 2021 by Wenjin. All rights reserved. May be freely copied or
 excerpted for educational purposes with credit to the author.
 updated by Michael Batbouta on July 31, 2021 at 4:50 pm
