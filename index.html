@@ -1,0 +1,40 @@
+<!--
+  resources used
+  https://www.w3schools.com/tags/tag_input.asp
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>title</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="tablecreate.js"></script>
+  </head>
+  <body>
+    <!-- page content
+     max and min of type num step = 1 for whole number-->
+    <h1>Multiplication Table Generator</h1>
+    <p>Please enter numbers between -50 and 50 for a multiplication table to be made</p>
+    <div id="wrapper">
+      <form id="dynamicCheck">
+        <label for="minCol">Minimium Column Value:</label>
+        <input id="minCol" type="number" min="-50" max="50" step="1"><br><br>
+        <p id="minColRes"></p>
+        <label for="maxCol">Maximum Column Value:</label>
+        <input id="maxCol" type="number" min="-50" max="50" step="1"><br><br>
+        <p id="maxColRes"></p>
+        <label for="minRow">Minimium Row Value:</label>
+        <input id="minRow" type="number" min="-50" max="50" step="1"><br><br>
+        <p id="minRowRes"></p>
+        <label for="maxRow">Maximum Column Value:</label>
+        <input id="maxRow" type="number" min="-50" max="50" step="1"><br><br>
+        <p id="maxRowRes"></p>
+        <input type="button" value="Create Element" onclick="validateEntry();"/>
+      </form>
+  
+     <div id="myDynamicTable"></div>
+    </div>
+
+  </body>
+</html>
