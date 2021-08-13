@@ -48,12 +48,7 @@ tr:nth-child(1) {
     overflow: visible;
     top:0;    
 }
-tr:nth-child(even) {
-    background-color: lightgray;
-    position: sticky;
-    overflow: visible;
-    top:0;    
-}
+
 
 #myDynamicTable{
     color:red;
