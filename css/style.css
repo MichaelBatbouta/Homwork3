@@ -8,6 +8,7 @@ updated by Michael Batbouta on July 31, 2021 at 4:50 pm
 */
 #wrapper{
 	width: 90%; 						/* Width is 80% of page*/
+    height:90%;
   	min-width: 600px;					/* Minimum Width is 600 pixels*/
 	margin: auto;						/* Centers wrapper in browser*/
 	background-color: white;
@@ -24,6 +25,7 @@ label{
 form{
     border-style: solid;
     margin-right: 10%;
+    max-height: 750px;
 }
 
 #wrapper p{
@@ -44,13 +46,25 @@ tr:nth-child(1) {
     background-color: lightblue;
     position: sticky;
     overflow: visible;
-    top:0;
-
-    
+    top:0;    
 }
+tr:nth-child(even) {
+    background-color: lightgray;
+    position: sticky;
+    overflow: visible;
+    top:0;    
+}
+
 #myDynamicTable{
     color:red;
     width:80%;
      height:80%;
+     max-height: 750px;
      overflow:auto;
+}
+.white{
+    background-color: white;
+}
+.red{
+    background-color: lightgray;
 }

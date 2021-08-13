@@ -86,6 +86,31 @@ function validateEntry() {
       mincolres.style.display = "";
       error =1;
     }
+    // adding no decimals
+    if(!Number.isInteger(Number.parseFloat(x))){
+      minColtext = "Decimals are not allowed";
+      document.getElementById("minColRes").innerHTML = minColtext;
+      mincolres.style.display = "";
+      error =1;
+    }
+    if(!Number.isInteger(Number.parseFloat(y))){
+      minColtext = "Decimals are not allowed";
+      document.getElementById("maxColRes").innerHTML = minColtext;
+      maxColRes.style.display = "";
+      error =1;
+    }
+    if(!Number.isInteger(Number.parseFloat(z))){
+      minColtext = "Decimals are not allowed";
+      document.getElementById("minRowRes").innerHTML = minColtext;
+      minRowRes.style.display = "";
+      error =1;
+    }
+    if(!Number.isInteger(Number.parseFloat(q))){
+      minColtext = "Decimals are not allowed";
+      document.getElementById("maxRowRes").innerHTML = minColtext;
+      maxRowRes.style.display = "";
+      error =1;
+    }
 
     if(error === 0){
       addTable();
@@ -108,6 +133,8 @@ function validateEntry() {
   
     var tableBody = document.createElement('TBODY');
     table.appendChild(tableBody);
+    var rowCount= 0;
+    var colCount = 0;
   
     for (var i = minrow-1; i <= maxrow; i++) {
       var tr = document.createElement('TR');
@@ -139,13 +166,21 @@ function validateEntry() {
           }else{
             var td = document.createElement('TD');
             td.width = '75';
+            if(((colCount+rowCount) % 2) === 1)
+            {
+              td.classList.add("white");
+            }
+            else{
+              td.classList.add("red");
+            }
             td.appendChild(document.createTextNode(i * j));
             tr.appendChild(td);
           }
-
+          colCount++;
         }
+        
       }
-
+      rowCount++;
     }
     myTableDiv.appendChild(table);
   }
